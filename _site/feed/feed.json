@@ -1,0 +1,86 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "EBST",
+  "language": "en",
+  "home_page_url": "https://yoururl.com",
+  "feed_url": "https://yoururl.com/%7B%7B%20metadata.jsonfeed.path%20%7D%7D",
+  "description": "Give your site a subitle",
+  "author": {
+    "name": "Your Name",
+    "url": "https://yoururl.com"
+  },
+  "items": [
+    {
+      "id": "https://yoururl.com/posts/2022/front-matter-cms/",
+      "url": "https://yoururl.com/posts/2022/front-matter-cms/",
+      "title": "Using Front Matter CMS",
+      "summary": "With the Front Matter CMS plugin in VS Code, you get a CMS-like experience for content creation.",
+      "date_published": "2022-12-10T00:00:00Z"
+    }
+    ,
+    {
+      "id": "https://yoururl.com/posts/2022/social-sharing/",
+      "url": "https://yoururl.com/posts/2022/social-sharing/",
+      "title": "Social Sharing",
+      "summary": "Simple social sharing tools included in the Eleventy Blog Starter Theme.",
+      "date_published": "2022-12-08T00:00:00Z"
+    }
+    ,
+    {
+      "id": "https://yoururl.com/posts/2022/linking/",
+      "url": "https://yoururl.com/posts/2022/linking/",
+      "title": "Linking",
+      "summary": "How internal links, navigation menus, and automatic pagination works in Eleventy and EBST.",
+      "date_published": "2022-12-01T00:00:00Z"
+    }
+    ,
+    {
+      "id": "https://yoururl.com/posts/2022/yaml-front-matter/",
+      "url": "https://yoururl.com/posts/2022/yaml-front-matter/",
+      "title": "YAML Front Matter",
+      "summary": "Using YAML for setting the title, choosing the layout, adding topical tags, and controlling “widgets”.",
+      "date_published": "2022-11-25T00:00:00Z"
+    }
+    ,
+    {
+      "id": "https://yoururl.com/posts/2022/content-creation/",
+      "url": "https://yoururl.com/posts/2022/content-creation/",
+      "title": "Content Creation",
+      "summary": "Markdown is an easy-to-learn web text authoring language, that is converted into HTML.",
+      "date_published": "2022-10-15T00:00:00Z"
+    }
+    ,
+    {
+      "id": "https://yoururl.com/posts/2022/theme-templates/",
+      "url": "https://yoururl.com/posts/2022/theme-templates/",
+      "title": "Theme Templates",
+      "summary": "How this theme uses the Nunjucks templating system.",
+      "date_published": "2022-09-21T00:00:00Z"
+    }
+    ,
+    {
+      "id": "https://yoururl.com/posts/2022/about-eleventy/",
+      "url": "https://yoururl.com/posts/2022/about-eleventy/",
+      "title": "About Eleventy",
+      "summary": "How Eleventy fits into the grand scheme of web things.",
+      "date_published": "2022-08-12T00:00:00Z"
+    }
+    ,
+    {
+      "id": "https://yoururl.com/posts/2022/installation/",
+      "url": "https://yoururl.com/posts/2022/installation/",
+      "title": "Installation",
+      "summary": "How to install the Eleventy Blog Starter Theme and its dependencies (including Eleventy); and how to serve the static website locally on your computer.",
+      "date_published": "2022-08-03T00:00:00Z"
+    }
+    ,
+    {
+      "id": "https://yoururl.com/posts/2022/introduction/",
+      "url": "https://yoururl.com/posts/2022/introduction/",
+      "title": "Introduction",
+      "summary": "This theme is documented in blog posts.",
+      "date_published": "2022-08-01T00:00:00Z"
+    }
+    
+  ]
+}

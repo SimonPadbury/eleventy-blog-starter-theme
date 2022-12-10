@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Using Front Matter CMS · EBST</title>
+
+    <meta name="description" content="With the Front Matter CMS plugin in VS Code, you get a CMS-like experience for content creation.">
+
+    
+
+
+<meta property="og:title" content="Using the Front Matter CMS in Visual Studio Code">
+<meta property="og:type" content="article" />
+  
+  <meta property="og:image" content="https://yoururl.com/img/featured-image.png">
+  
+  
+  <meta property="og:url" content="https://yoururl.com/posts/2022/front-matter-cms">
+  
+<meta name="twitter:card" content="summary_large_image">
+
+
+<meta property="og:description" content="With the Front Matter CMS plugin in VS Code, you get a CMS-like experience for content creation.">
+<meta property="og:site_name" content="EBST">
+<meta property="twitter:image:alt" content="https://yoururl.comundefined">
+
+
+<meta property="fb:app_id" content="your_fb_app_id" />
+<meta property="twitter:site" content="@your_sitename">
+
+    <link rel="icon" href="/favicon.ico" sizes="any"><!-- 32×32 -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='50' width='50'%3E%3Ccircle cx='25' cy='25' r='24' stroke='black' stroke-width='2' fill='orange'%3E%3C/circle%3E%3C/svg%3E" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180×180 -->
+    <link rel="manifest" href="/manifest.webmanifest">
+
+    <link rel="stylesheet" href="/css/baselayer.css?v=01aug2022">
+    
+
+    
+    <link rel="canonical" href="https://yoururl.com/posts/2022/front-matter-cms" />
+    
+
+    <link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="EBST">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="EBST">
+
+    <style>
+@media (max-width: 767px) {
+  #site-navigation a {
+    margin-block: var(--s2)
+  }
+}
+
+#theme-toggle {
+  background: transparent;
+}
+.theme-light #theme-toggle {
+  color: hsl(var(--hsgray), var(--l800));
+}
+
+.theme-dark #theme-toggle span::before { content: 'Light '; }
+.theme-light #theme-toggle span::before { content: 'Dark '; }
+
+body.theme-dark  {
+  background-color: black !important;
+  color: hsl(var(--hsgray), var(--l100));
+}
+.theme-dark a {
+  color: hsl(var(--hsblue), var(--l300));
+}
+.theme-dark a:hover {
+  color: hsl(var(--hsblue), var(--l400));
+}
+.theme-dark code, .theme-dark pre code {
+  color: white;
+  background-color: hsl(var(--hsblue), var(--l600));
+}
+.theme-dark #site-header {
+  background-color: hsl(var(--hsgray), var(--l900));
+}
+.theme-dark #featured-posts {
+  border-color: hsl(var(--hsgray), var(--l700));
+  background-color: hsl(var(--hsgray), var(--l900));
+}
+.theme-dark #post-content, .theme-dark #page-content, .theme-dark .post-card {
+  background-color: hsl(var(--hsgray), var(--l900));
+}
+.theme-dark .post-card {
+  border-color: hsl(var(--hsgray), var(--l500));
+}
+.theme-dark .h2 a, .theme-dark .h3 a {
+  color: hsl(var(--hsgray), var(--l100));
+}
+.theme-dark .h2 a:hover, .theme-dark .h3 a:hover {
+  color: hsl(var(--hsgray), var(--l200));
+}
+.theme-dark .message-info {
+  border-color: hsl(var(--hsblue), var(--l400));
+  background-color: black;
+}
+
+.contentgrid pre {
+  grid-column: 3 / span 3;
+}
+.post-tag:not(:last-of-type)::after {
+  content: ","
+}
+
+    </style>
+
+    
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const themeToggle = document.querySelectorAll("#theme-toggle");
+
+  themeToggle.forEach(element => {
+    element.addEventListener("click", function() {
+      if ( sessionStorage.getItem("ebstTheme") === "dark" ) {
+        themeLight();
+      } else {
+        themeDark();
+      }
+    });
+  });
+  
+  function themeDark() {
+    sessionStorage.setItem("ebstTheme", "dark");
+    document.body.classList.remove("theme-light");
+    document.body.classList.add("theme-dark");
+  }
+
+  function themeLight() {
+    sessionStorage.setItem("ebstTheme", "light");
+    document.body.classList.remove("theme-dark");
+    document.body.classList.add("theme-light");
+  }
+  
+  function themePref() {
+    if ( window.matchMedia('(prefers-color-scheme: dark)').matches ) {
+        themeDark();
+    } else
+    if ( window.matchMedia('(prefers-color-scheme: light)').matches ) {
+        themeLight();
+    } else {
+        // Default is light
+        themeLight();
+    }
+  }
+
+  function themeInit() {
+    if ( sessionStorage.getItem("ebstTheme") === "dark" ) {
+      themeDark();
+    } else {
+      themeLight();
+    }
+  }
+
+  themeInit();
+
+});
+    </script>
+  </head>
+
+  <body class="h100vh flex flexcolumn post">
+
+    <!-- Current page: /posts/2022/front-matter-cms/ -->
+
+    <a id="skip-link" href="#main-content" tabindex="1" class="inlineblock m1 visuallyhidden">Skip to main content</a>
+
+    <header id="site-header" class="bggray bg100">
+  <div class="container wxl py1 sm:flex flexmiddle flexwrap flexspace">
+    <div class="flex flexmiddle flexspace">
+      <div id="site-brand" class="mr1">
+        <a href="/" class="h4 m0 normal flex flexmiddle noline">
+          
+          <svg style="width: 32px; height: 32px" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><path d="M10 20C4.481 20 0 15.519 0 10S4.481 0 10 0h10v20H10ZM34 0c5.519 0 10 4.481 10 10s-4.481 10-10 10H24V0h10ZM10 44C4.481 44 0 39.519 0 34s4.481-10 10-10h10v20H10ZM34 24c5.519 0 10 4.481 10 10s-4.481 10-10 10H24V24h10Z" fill="currentColor"/></svg>
+          <span class="pl1 heavy">EBST</span>
+        </a>
+      </div>
+      <button
+        type="button"
+        id="site-navigation-toggle"
+        aria-expanded="false"
+        aria-label="Menu"
+        class="bold tgray t700 h:tblack bgblue bg300 h:bg400 sm:hidden">
+        MENU
+      </button>
+    </div>
+
+    <nav role="navigation" id="site-navigation">
+      <div id="site-navigation-menu" class="sm:flex gap">
+        <a 
+          class="inlineblock my1 semibold uppercase"
+          
+          href="/"
+        >Home</a>
+        <a 
+          class="inlineblock my1 semibold uppercase"
+          
+          href="/posts/"
+        >Blog</a>
+        <a 
+          class="inlineblock my1 semibold uppercase"
+          
+          href="/about/"
+        >About</a>
+        <a 
+          class="inlineblock my1 semibold uppercase"
+          
+          href="/contact/"
+        >Contact</a>
+
+        <button id="theme-toggle" class="nowrap uppercase">
+          <svg height="20" width="20">
+            <circle cx="10" cy="10" r="10" fill="currentColor" />
+          </svg>&nbsp;
+          <span>theme</span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  @media (max-width: 719px) {
+    #site-navigation-menu a {
+      display: block;
+    }
+  }
+  .js #site-navigation-menu {
+    overflow-y: hidden;
+    max-height: 0;
+    transition: max-height .6s cubic-bezier(0, 1, 0, 1);
+  }
+  #site-navigation-menu.is-active {
+    max-height: 500px;
+    transition-timing-function: ease-in;
+  }
+  @media (min-width: 720px) {
+    .js #site-navigation-menu {
+      max-height: unset;
+    }
+  }
+</style>
+
+<script type="text/javascript">
+  let toggle = document.querySelector('#site-navigation-toggle');
+  let menu = document.querySelector('#site-navigation-menu');
+
+  document.body.classList.add('js');
+
+  toggle.addEventListener('click', function() {
+    if (menu.classList.contains('is-active')) {
+      this.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-active');
+    } else {
+      menu.classList.add('is-active'); 
+      this.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.matchMedia('(min-width: 720px)').matches) {
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-active');
+    }
+  });
+</script>
+
+    <main id="main-content" class="grow ">
+      
+<div class="wxl mxauto sm:grid4cols gap">
+  <div class="sm:cols1-3">
+    <article id="post-content" class="my2 p1 bgwhite ">
+      <header id="post-header" class="p2">
+        <div class="bb1 bgray pb1">
+          <div class="longread">
+            
+            <h1 class="heavy">
+              
+              Using the Front Matter CMS in Visual Studio Code
+            </h1>
+            <p class="h4 m0 mt2">With the Front Matter CMS plugin in VS Code, you get a CMS-like experience for content creation.</p>
+      
+            
+          </div>
+          <div id="post-header-metas">
+  <p class="mt4">
+    
+    <span class="author">
+      By Simon Padbury
+    </span> •
+    
+    <span class="date">
+      10 December 2022
+    </span>
+    • <span class="time-to-read nowrap">
+      2 minutes read
+    </span>
+  </p>
+</div>
+        </div>
+      </header>
+    
+      <div id="post-body" class="contentgrid mt2 mb4">
+    
+        <p><a href="https://code.visualstudio.com">Visual Studio Code</a> is one of the best code editors out there, and it is highly recommended. If is free software from <em>Microsoft</em>, and there are versions available that can be installed on Windows, macOS, and Linux.</p>
+<p>Eleventy, and EBST, can be used with any code editor — you just need NodeJS and NPM installed. Eleventy/EBST can be used simply that way, by coding and Markdown content creation. But Front Matter CMS provides <em>headless CMS-like features</em>, inside VS Code.</p>
+<h2 id="install-vs-code%2C-and-get-the-front-matter-cms-plugin" tabindex="-1">Install VS Code, and Get the Front Matter CMS Plugin</h2>
+<p>Install VS Code, if you haven’t done so already.</p>
+<p>Then, in VS code, you can install the free <a href="https://frontmatter.codes">Front Matter CMS plugin</a>. In the left toolbar there’s a “Plugins” icon — if you click that, it opens a sidebar with a list of available plugins. Find <strong>Front Matter CMS</strong> and click the “Install” button.</p>
+<h2 id="getting-started-with-front-matter-cms" tabindex="-1">Getting Started with Front Matter CMS</h2>
+<p>Open <strong>your EBST project folder</strong>, then click the Front Matter CMS icon in the left toolbar. At the top of the Front Matter CMS sidebar that opens, you will see the “Initialize project” button (and not much else). Click that button.</p>
+<p>You will now see the Front Matter CMS <em>welcome screen</em> (see also <a href="https://frontmatter.codes/docs/getting-started">Getting started</a> in the Front Matter CMS docs). You need to work though and complete the checklist below the bold instruction, “<strong>Perform the next steps to get you started with the extension</strong>”. Click the circles on the vertical line to turn them into green checks:</p>
+<ul>
+<li>INITIALIZE PROJECT</li>
+<li>FRAMEWORK PRESETS — it should detect and pre-select “11ty”</li>
+<li>REGISTER CONTENT FOLDER(S) — it should detect your folders containing Markdown files, and give you the option to register them, e.g. my EBST folder are:
+<ul>
+<li><code>_src/pages</code></li>
+<li><code>_src/posts/2022</code></li>
+</ul>
+</li>
+<li>IMPORT ALL TAGS AND CATEGORIES (OPTIONAL) — it’s up to you, but I always do it.</li>
+<li>SHOW THE DASHBOARD — if you can do this last step, then you have completed the initialization of your project.</li>
+</ul>
+<h2 id="getting-familiar-with-front-matter-cms" tabindex="-1">Getting Familiar with Front Matter CMS</h2>
+<p>If you have used a CMS before, you’ll feel right at home. There is extensive <a href="https://frontmatter.codes/docs">documentation on Front Matter CMS website</a>.</p>
+
+    
+      </div>
+    
+      <footer id="post-footer">
+        <p class="center">
+          In tags:
+          
+            <span class="post-tag"><a class="noline h:line" href="/tags/Front Matter/">Front Matter</a></span>
+            <span class="post-tag"><a class="noline h:line" href="/tags/VSCode/">VSCode</a></span>
+          </p>
+          <p>
+            <div id="social-sharing" class="mt2 flex flexcenter flexwrap gap">
+
+  <a class="flex flexmiddle noline" href="https://www.facebook.com/sharer.php?u=https://yoururl.com/posts/2022/front-matter-cms/" target="_blank" rel="noopener" aria-label="Share on Facebook">
+    <span aria-hidden="true" class="mr1">
+      <svg id="facebook-icon" role="img" viewBox="0 0 24 24" style="width: 24px; height: 24px;" xmlns="http://www.w3.org/2000/svg">
+        <title>Facebook icon</title>
+        <path d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z" fill="#1778f2"></path>
+      </svg>
+    </span>
+    <span>Share on Facebook</span>
+  </a>
+  <a class="flex flexmiddle noline" href="https://twitter.com/intent/tweet?url=https://yoururl.com/posts/2022/front-matter-cms/&text=Using Front Matter CMS" target="_blank" rel="noopener" aria-label="Share on Twitter">
+    <span aria-hidden="true" class="mr1">
+      <svg id="twitter-icon" role="img" viewBox="0 0 24 24" style="width: 24px; height: 24px;" xmlns="http://www.w3.org/2000/svg">
+        <title>Twitter icon</title>
+        <path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z" fill="#1da1f2"></path>
+      </svg>
+    </span>
+    <span>Share on Twitter</span>
+  </a>
+  <a class="flex flexmiddle noline" href="mailto:?subject=Sharing an article from EBST&amp;body=Article title: Using Front Matter CMS %0A%0A https://yoururl.com/posts/2022/front-matter-cms/" target="_self" rel="noopener" aria-label="Share by Email">
+    <span aria-hidden="true" class="mr1">
+      <title>Email icon</title>
+      <svg id="email-icon" viewBox="0 0 83 61" style="width: 24px; height: 24px;" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
+        <path d="M0 5.989L30.591 29.82 0 56.476V5.989zM82.676 5.989L52.085 29.82l30.591 26.656V5.989zM0 0h82.677L41.338 32.386 0 0zM41.338 60.142v-21.95l6.95-5.415 31.436 27.365H41.338zm0 0v-21.95l-6.95-5.415L2.952 60.142h38.386z" fill="#999999"></path>
+      </svg>
+    </span>
+    <span>Share by Email</span>
+  </a>
+</div>
+          </p>
+      </footer>
+
+      <nav id="prev-next" class="m2 bt1 bgray pt2 sm:grid2cols gap">
+    <a class="prev flex flexmiddle" href="/posts/2022/social-sharing/">
+      <div class="big">
+        <span class="h2 m0">❮</span>
+      </div>
+      <div class="pt1">
+        <span class="uppercase">Previous post</span><br />
+        <strong>Social Sharing in EBST</strong>
+      </div>
+    </a>
+  
+
+</nav>
+    </article>        
+  </div>
+
+  
+
+<div class="p2 relative" style="width: max(176px, 100%);">
+  <div class="sticky top hmax100vh overflowy py1">
+
+      
+      <div class="mb3 sm:hiddenbelow">
+        <p class="h4 m0 bold">On this page</p>
+        <nav class="toc" >
+        <ul><li><a href="#install-vs-code%2C-and-get-the-front-matter-cms-plugin">Install VS Code, and Get the Front Matter CMS Plugin</a></li><li><a href="#getting-started-with-front-matter-cms">Getting Started with Front Matter CMS</a></li><li><a href="#getting-familiar-with-front-matter-cms">Getting Familiar with Front Matter CMS</a></li></ul>
+      </nav>
+      </div>
+      
+
+      <p class="h4 m0 bold">Docs</p>
+
+      
+      <nav>
+        <ol>
+          
+          <li>
+            <a href="/posts/2022/introduction/">Introduction</a>
+          </li>
+        
+          <li>
+            <a href="/posts/2022/about-eleventy/">About Eleventy</a>
+          </li>
+        
+          <li>
+            <a href="/posts/2022/installation/">Installation</a>
+          </li>
+        
+          <li>
+            <a href="/posts/2022/theme-templates/">Theme Templates</a>
+          </li>
+        
+          <li>
+            <a href="/posts/2022/content-creation/">Content Creation</a>
+          </li>
+        
+          <li>
+            <a href="/posts/2022/yaml-front-matter/">YAML Front Matter</a>
+          </li>
+        
+          <li>
+            <a href="/posts/2022/linking/">Linking</a>
+          </li>
+        
+          <li>
+            <a href="/posts/2022/social-sharing/">Social Sharing</a>
+          </li>
+        
+          <li>
+            <a href="/posts/2022/front-matter-cms/">Using Front Matter CMS</a>
+          </li>
+        
+        </ol>
+      </nav>
+
+      <hr class="my2 bgray b600">
+      
+      <p class="p0">
+        <a class="noline" href="https://simonpadbury.github.io/baselayer/" target="_blank">Baselayer CSS docs</a> (offsite)
+      </p>
+
+  </div>
+</div>
+</div>
+
+
+    </main>
+
+    <footer id="site-footer" class="mt2 pt4 pb2 tgray t300 bggray bg900">
+  <div class="container center">
+
+    <div id="site-brand-bottom" class="flex flexcenter longread">
+      <a href="/" class="h4 m0 normal flex flexcolumn flexmiddle noline tblue t300 h:t400">
+        
+        <svg style="width: 64px; height: 64px" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><path d="M10 20C4.481 20 0 15.519 0 10S4.481 0 10 0h10v20H10ZM34 0c5.519 0 10 4.481 10 10s-4.481 10-10 10H24V0h10ZM10 44C4.481 44 0 39.519 0 34s4.481-10 10-10h10v20H10ZM34 24c5.519 0 10 4.481 10 10s-4.481 10-10 10H24V24h10Z" fill="currentColor"/></svg>
+        <span class="pt2">EBST</span>
+      </a>
+    </div>
+
+    <nav class="wsm mxauto my2 center">
+      <ul class="unlist p0 flex flexcenter uppercase">
+        <li class="m0 p1">
+          <a class=" tblue t300 h:t400" href="/">Home</a>
+        </li>
+        <li class="m0 p1">
+          <a class=" tblue t300 h:t400" href="/posts/">Blog</a>
+        </li>
+        <li class="m0 p1">
+          <a class=" tblue t300 h:t400" href="/about/">About</a>
+        </li>
+        <li class="m0 p1">
+          <a class=" tblue t300 h:t400" href="/contact/">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="center">
+      <p>
+        &copy;
+        <script type="text/javascript">
+          let currentYear = new Date().getFullYear();
+          document.write(currentYear);
+        </script>
+        <a class="noline h:line tblue t300 h:t400" href="/">EBST</a> —
+        <svg style="position: relative; top: 4px; display: inline-block; width: 20px; height: 20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 455.731 455.731" style="enable-background:new 0 0 455.731 455.731" xml:space="preserve"><path style="fill:#f78422" d="M0 0h455.731v455.731H0z"/><path style="fill:#fff" d="M296.208 159.16C234.445 97.397 152.266 63.382 64.81 63.382v64.348c70.268 0 136.288 27.321 185.898 76.931 49.609 49.61 76.931 115.63 76.931 185.898h64.348c-.001-87.456-34.016-169.636-95.779-231.399z"/><path style="fill:#fff" d="M64.143 172.273v64.348c84.881 0 153.938 69.056 153.938 153.939h64.348c0-120.364-97.922-218.287-218.286-218.287z"/><circle style="fill:#fff" cx="109.833" cy="346.26" r="46.088"/></svg> 
+        <a class="noline h:line tblue t300 h:t400" href="/feed/feed.xml">Atom</a> · <a class="noline h:line tblue t300 h:t400" href="/feed/feed.json">JSON</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

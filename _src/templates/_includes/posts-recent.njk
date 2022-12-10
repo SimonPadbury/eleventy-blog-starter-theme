@@ -1,0 +1,16 @@
+<section class="container my3">
+  <div id="posts-recent" class="my3">
+    <p class="h4 pr1 pl1 uppercase">Recent Posts</p>
+    <div class="sm:grid3cols gap">
+      {% set postslist = collections.posts | head(-3) %}
+      {% for post in postslist | reverse %}
+      <div class="mb1 b1 p2">
+        {% include "_includes/post-card.njk" %}
+      </div>
+      {% endfor %}
+    </div>
+    <p class="mt2 center">
+      <a href="/posts/">All posts →</a>
+    </p>
+  </div>
+</section>

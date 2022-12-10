@@ -1,0 +1,41 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+    - tagList
+  addAllPagesToCollections: true
+layout: page.njk
+eleventyComputed:
+  title: Tagged “{{ tag }}”
+permalink: /tags/{{ tag }}/
+---
+
+{#
+Listing page for each tag
+#}
+
+<div>
+  {% set postslist = collections[ tag ] %}
+  {% for post in postslist | reverse %}
+  <div class="sm:grid4cols gap">
+    <p class="sm:cols1-3 h4 my1">
+      <a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+    </p>
+    <p>
+      <time class="postlist-date" datetime="{{ post.date | date('yyyy-MM-dd') }}">{{ post.date | date("dd MMMM yyyy") }}</time>
+    </p>
+  </div>
+  {% endfor %}
+
+  <hr />
+
+  <p class="center">
+    <a href="/tags/">All tags →</a>
+  </p>
+</div>

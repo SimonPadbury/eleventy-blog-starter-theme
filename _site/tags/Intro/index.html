@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Tagged “Intro” · Name Your Site</title>
+
+    <meta name="description" content="Your site meta description (default)">
+
+    <link rel="icon" href="/favicon.ico" sizes="any"><!-- 32×32 -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='50' width='50'%3E%3Ccircle cx='25' cy='25' r='24' stroke='black' stroke-width='2' fill='orange'%3E%3C/circle%3E%3C/svg%3E" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180×180 -->
+    <link rel="manifest" href="/manifest.webmanifest">
+
+    <link rel="stylesheet" href="/css/baselayer.css?v=01aug2022">
+
+    <style>
+      .contentgrid pre {
+        grid-column: 3 / span 3;
+      }
+      .post-tag:not(:last-of-type)::after {
+        content: ","
+      }
+    </style>
+    
+    
+    <link rel="canonical" href="https://yoururl.com/tags/{{ tag }}/" />
+    
+
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Name Your Site">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Name Your Site">
+
+    
+  </head>
+
+  <body class="h100vh flex flexcolumn ">
+
+    <!-- Current page: /tags/Intro/ -->
+
+    <a id="skip-link" href="#main-content" tabindex="1" class="inlineblock m1 visuallyhidden">Skip to main content</a>
+
+    <header id="site-header">
+  <div class="container bb2 bgray b600 sm:flex flexmiddle flexwrap flexspace relative">
+    <div id="site-brand" class="mt1 mr1">
+      <a href="/" class="h4 m0 normal inlineflex flexmiddle tgray t600 h:tblack noline">
+        
+        <svg height="60" width="60">
+          <circle cx="30" cy="30" r="25" stroke="black" stroke-width="3" fill="rgb(230, 171, 0)" />
+        </svg>
+        <span class="p1 bold">Name Your Site</span>
+      </a>
+    </div>
+
+    <button
+      type="button"
+      id="site-navigation-toggle"
+      aria-expanded="false"
+      aria-label="Menu"
+      class="absolute top right mt1 bold tgray t700 h:tblack bgamber bg400 h:bg500 sm:hidden">
+      MENU
+    </button>
+
+    <nav role="navigation" id="site-navigation">
+      <div id="site-navigation-menu" class="sm:flex gap">
+        <a 
+          class="inlineblock my2 bold tgray t700 h:tblack uppercase"
+          
+          href="/"
+        >Home</a>
+        <a 
+          class="inlineblock my2 bold tgray t700 h:tblack uppercase"
+          
+          href="/posts/"
+        >Blog</a>
+        <a 
+          class="inlineblock my2 bold tgray t700 h:tblack uppercase"
+          
+          href="/about/"
+        >About</a>
+        <a 
+          class="inlineblock my2 bold tgray t700 h:tblack uppercase"
+          
+          href="/contact/"
+        >Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  @media (max-width: 719px) {
+    #site-navigation-menu a {
+      display: block;
+    }
+  }
+  .js #site-navigation-menu {
+    overflow-y: hidden;
+    max-height: 0;
+    transition: max-height .6s cubic-bezier(0, 1, 0, 1);
+  }
+  #site-navigation-menu.is-active {
+    max-height: 500px;
+    transition-timing-function: ease-in;
+  }
+  @media (min-width: 720px) {
+    .js #site-navigation-menu {
+      max-height: unset;
+    }
+  }
+</style>
+
+<script type="text/javascript">
+  let toggle = document.querySelector('#site-navigation-toggle');
+  let menu = document.querySelector('#site-navigation-menu');
+
+  document.body.classList.add('js');
+
+  toggle.addEventListener('click', function() {
+    if (menu.classList.contains('is-active')) {
+      this.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-active');
+    } else {
+      menu.classList.add('is-active'); 
+      this.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.matchMedia('(min-width: 720px)').matches) {
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-active');
+    }
+  });
+</script>
+
+    <main id="main-content" class="grow "">
+      
+<article class="article mb2 ">
+  <header id="page-title" class="expand my2 center ">
+    <h1 class="my4">Tagged “Intro”</h1>
+  </header>
+
+  <div id="page-content" class="contentgrid mb4 ">
+    
+
+
+<div>
+  
+  
+  <div class="sm:grid4cols gap">
+    <p class="sm:cols1-3 h4 my1">
+      <a href="/posts/2022/introduction/" class="postlist-link">Introduction</a>
+    </p>
+    <p>
+      <time class="postlist-date" datetime="2022-08-01">01 August 2022</time>
+    </p>
+  </div>
+  
+
+  <hr />
+
+  <p class="center">
+    <a href="/tags/">All tags →</a>
+  </p>
+</div>
+
+  </div>
+</article>
+
+
+    </main>
+
+    <footer id="site-footer" class="mt4 py3 bgamber bg200">
+  <div class="container center">
+
+    <div id="site-brand-bottom" class="flex flexcenter longread">
+      <a href="/" class="h4 m0 normal flex flexcolumn flexmiddle noline">
+        
+        <svg height="100" width="100">
+          <circle cx="50" cy="50" r="40" stroke="black" stroke-width="4" fill="rgb(230, 171, 0)" />
+        </svg>
+        <span class="p1">Name Your Site</span>
+      </a>
+    </div>
+
+    <nav class="wsm mxauto my2 center">
+      <ul class="unlist p0 flex flexcenter uppercase">
+        <li class="m0 p1">
+          <a href="/">Home</a>
+        </li>
+        <li class="m0 p1">
+          <a href="/posts/">Blog</a>
+        </li>
+        <li class="m0 p1">
+          <a href="/about/">About</a>
+        </li>
+        <li class="m0 p1">
+          <a href="/contact/">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="center">
+      <p>
+        &copy;
+        <script type="text/javascript">
+          let currentYear = new Date().getFullYear();
+          document.write(currentYear);
+        </script>
+        <a class="noline" href="/">Name Your Site</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

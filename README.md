@@ -1,1 +1,3 @@
-# eleventy-blog-starter-theme
+# Eleventy Blog Starter Theme
+
+Version 1.0

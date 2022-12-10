@@ -1,0 +1,30 @@
+<div id="social-sharing" class="mt2 flex flexcenter flexwrap gap">
+
+  <a class="flex flexmiddle noline" href="https://www.facebook.com/sharer.php?u={{ metadata.url }}{{ page.url }}" target="_blank" rel="noopener" aria-label="Share on Facebook">
+    <span aria-hidden="true" class="mr1">
+      <svg id="facebook-icon" role="img" viewBox="0 0 24 24" style="width: 24px; height: 24px;" xmlns="http://www.w3.org/2000/svg">
+        <title>Facebook icon</title>
+        <path d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z" fill="#1778f2"></path>
+      </svg>
+    </span>
+    <span>Share on Facebook</span>
+  </a>
+  <a class="flex flexmiddle noline" href="https://twitter.com/intent/tweet?url={{ metadata.url }}{{ page.url}}&text={{title}}" target="_blank" rel="noopener" aria-label="Share on Twitter">
+    <span aria-hidden="true" class="mr1">
+      <svg id="twitter-icon" role="img" viewBox="0 0 24 24" style="width: 24px; height: 24px;" xmlns="http://www.w3.org/2000/svg">
+        <title>Twitter icon</title>
+        <path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z" fill="#1da1f2"></path>
+      </svg>
+    </span>
+    <span>Share on Twitter</span>
+  </a>
+  <a class="flex flexmiddle noline" href="mailto:?subject=Sharing an article from {{ metadata.title }}&amp;body=Article title: {{ h1title or title }} %0A%0A {{ metadata.url }}{{ page.url }}" target="_self" rel="noopener" aria-label="Share by Email">
+    <span aria-hidden="true" class="mr1">
+      <title>Email icon</title>
+      <svg id="email-icon" viewBox="0 0 83 61" style="width: 24px; height: 24px;" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
+        <path d="M0 5.989L30.591 29.82 0 56.476V5.989zM82.676 5.989L52.085 29.82l30.591 26.656V5.989zM0 0h82.677L41.338 32.386 0 0zM41.338 60.142v-21.95l6.95-5.415 31.436 27.365H41.338zm0 0v-21.95l-6.95-5.415L2.952 60.142h38.386z" fill="#999999"></path>
+      </svg>
+    </span>
+    <span>Share by Email</span>
+  </a>
+</div>

@@ -1,0 +1,43 @@
+<nav id="posts-paginator" class="flex flexmiddle flexspace flexwrap">
+  <ul class="unlist p0 flex flexwrap">
+    <li class="m0 p1">
+      {% if page.url != pagination.href.first %}
+      <a class="bold nowrap" href="{{ pagination.href.first }}">&laquo; Newest</a>
+      {% else %}
+      <span class="tgray t500 nowrap">&laquo; Newest</span>
+      {% endif %}
+    </li>
+    <li class="m0 p1">
+      {% if pagination.href.previous %}
+      <a class="bold nowrap" href="{{ pagination.href.previous }}">&lsaquo; Newer</a>
+      {% else %}
+      <span class="tgray t500 nowrap">&lsaquo; Newer</span>
+      {% endif %}
+    </li>
+
+    {%- for pageChunk in pagination.pages %}
+    <li class="m0 p1 bold">
+      <a href="{{ pagination.hrefs[ loop.index0 ] }}" 
+        {% if page.url == pagination.hrefs[ loop.index0 ] %}aria-current="page"{% endif %}
+      >{{ loop.index }}</a>
+    </li>
+    {%- endfor %}
+
+    <li class="m0 p1">
+      {% if pagination.href.next %}
+      <a class="bold nowrap" href="{{ pagination.href.next }}">Older &rsaquo;</a>
+      {% else %}
+      <span class="tgray t500 nowrap">Older &rsaquo;</span>
+      {% endif %}
+    </li>
+    <li class="m0 p1">
+      {% if page.url != pagination.href.last %}
+      <a class="bold nowrap" href="{{ pagination.href.last }}">Oldest &raquo;</a>
+      {% else %}
+      <span class="tgray t500 nowrap">Oldest &raquo;</span>
+      {% endif %}
+    </li>
+  </ul>
+
+  <p class="p1"><a class="bold" href="/posts/archive">Archive</a></p>
+</nav>

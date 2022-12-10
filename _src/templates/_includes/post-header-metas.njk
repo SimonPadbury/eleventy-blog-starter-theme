@@ -1,0 +1,19 @@
+<div id="post-header-metas">
+  <p class="mt4">
+    {% if author %}
+    <span class="author">
+      By {{ author }}
+    </span> •
+    {% else %}
+    <span class="author">
+      By {{ metadata.author.name }}
+    </span> •
+    {% endif %}
+    <span class="date">
+      {{ page.date | date("d MMMM yyyy") }}
+    </span>
+    • <span class="time-to-read nowrap">
+      {{ content | striptags | wordcount | readingTime }} read
+    </span>
+  </p>
+</div>

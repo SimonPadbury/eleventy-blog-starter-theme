@@ -1,0 +1,42 @@
+---
+title: Blog
+layout: page.njk
+eleventyNavigation:
+  key: Blog
+  order: 2
+pagination:
+  data: collections.posts
+  size: 10
+  alias: posts
+  reverse: true
+---
+
+<div id="posts-index">
+  {% for post in posts %}
+  <div class="mb4 pt2">
+    <p class="h2 m0 heavy">
+      <a class="tgray t800 h:tblack noline h:line" href="{{ post.url }}">{{ post.data.h1Title }}</a>
+    </p>
+    <p class="mt1">
+      {% if post.data.description %}
+        {{ post.data.description }}
+      {% else %}
+        EXCERPT REQUIRED
+      {% endif %}
+    </p>  
+    <p>{{ post.date | date("d MMMM yyyy") }} 
+      • in {% for tag in post.data.tags %}
+        {%- if collections.tagList.indexOf(tag) != -1 -%}
+        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+        <span class="post-tag"><a href="{{ tagUrl }}">{{ tag }}</a></span>
+        {%- endif -%}
+        {% endfor %}        
+      • {{ post.templateContent | striptags | wordcount | readingTime }} read
+    </p>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="expand mt2 bt1">
+{% include "_includes/posts-paginator.njk" %}
+</div>

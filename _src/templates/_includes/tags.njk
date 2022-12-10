@@ -1,0 +1,12 @@
+{# Just a list of your tags. #}
+
+<div class="tags">
+  {% for tag in collections.tagList %}
+    {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+    <div class="tag">
+      <p>
+        <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
+      </p>
+    </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,8 @@
+{
+  "layout": "post.njk",
+  "tags": [
+    "posts"
+  ],
+  "bodyClass": "post",
+  "canonical": "true"
+}

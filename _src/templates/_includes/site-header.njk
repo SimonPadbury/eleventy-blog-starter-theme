@@ -1,0 +1,86 @@
+<header id="site-header" class="bggray bg100">
+  <div class="container wxl py1 sm:flex flexmiddle flexwrap flexspace">
+    <div class="flex flexmiddle flexspace">
+      <div id="site-brand" class="mr1">
+        <a href="/" class="h4 m0 normal flex flexmiddle noline">
+          {# EBST logo #}
+          <svg style="width: 32px; height: 32px" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><path d="M10 20C4.481 20 0 15.519 0 10S4.481 0 10 0h10v20H10ZM34 0c5.519 0 10 4.481 10 10s-4.481 10-10 10H24V0h10ZM10 44C4.481 44 0 39.519 0 34s4.481-10 10-10h10v20H10ZM34 24c5.519 0 10 4.481 10 10s-4.481 10-10 10H24V24h10Z" fill="currentColor"/></svg>
+          <span class="pl1 heavy">{{ metadata.title }}</span>
+        </a>
+      </div>
+      <button
+        type="button"
+        id="site-navigation-toggle"
+        aria-expanded="false"
+        aria-label="Menu"
+        class="bold tgray t700 h:tblack bgblue bg300 h:bg400 sm:hidden">
+        MENU
+      </button>
+    </div>
+
+    <nav role="navigation" id="site-navigation">
+      <div id="site-navigation-menu" class="sm:flex gap">
+        {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
+        {%- for entry in collections.all | eleventyNavigation %}
+        <a 
+          class="inlineblock my1 semibold uppercase"
+          {% if entry.url == page.url %} aria-current="page"{% endif %}
+          href="{{ entry.url }}"
+        >{{ entry.title }}</a>
+        {%- endfor %}
+
+        <button id="theme-toggle" class="nowrap uppercase">
+          <svg height="20" width="20">
+            <circle cx="10" cy="10" r="10" fill="currentColor" />
+          </svg>&nbsp;
+          <span>theme</span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  @media (max-width: 719px) {
+    #site-navigation-menu a {
+      display: block;
+    }
+  }
+  .js #site-navigation-menu {
+    overflow-y: hidden;
+    max-height: 0;
+    transition: max-height .6s cubic-bezier(0, 1, 0, 1);
+  }
+  #site-navigation-menu.is-active {
+    max-height: 500px;
+    transition-timing-function: ease-in;
+  }
+  @media (min-width: 720px) {
+    .js #site-navigation-menu {
+      max-height: unset;
+    }
+  }
+</style>
+
+<script type="text/javascript">
+  let toggle = document.querySelector('#site-navigation-toggle');
+  let menu = document.querySelector('#site-navigation-menu');
+
+  document.body.classList.add('js');
+
+  toggle.addEventListener('click', function() {
+    if (menu.classList.contains('is-active')) {
+      this.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-active');
+    } else {
+      menu.classList.add('is-active'); 
+      this.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.matchMedia('(min-width: 720px)').matches) {
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-active');
+    }
+  });
+</script>

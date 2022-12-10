@@ -1,0 +1,54 @@
+---
+layout: base.njk
+eleventyNavigation:
+  key: Home
+  order: 1
+---
+
+<section class="container">
+  <header class="wmd my4 mxauto big center">
+    <h1 class="heavy">Eleventy Blog Starter Theme</h1>
+  </header>
+
+  <div class="wsm mxauto mb4">
+{% renderTemplate "md" %}
+This page is generated from `index.njk`
+
+The paragraphs you see here are rendered using Eleventy’s [Render Plugin](https://www.11ty.dev/docs/plugins/render/) from embedded Markdown.
+
+This starter theme assumes you don’t want your blog feed to begin on your homepage. But you can refactor the templates to do that.
+
+You can do whatever you want on your homepage. Meanwhile, all this stuff is just for demonstraton purposes.
+{% endrenderTemplate %}
+  </div>
+</section>
+
+<section id="featured-posts" class="mt3 bt1 bb1 py3 bggray bg100">
+  <div class="container wlg">
+    <div class="longread">
+      <p class="h2 m0 mb3 center uppercase">Featured Posts</p>
+    </div>
+    <div class="sm:grid2cols md:grid3cols gap">
+      {% set postslist = collections.featuredPosts %}
+      {% for post in postslist | reverse %}
+      {% include "_includes/post-card.njk" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="homepage-latest-posts" class="container wlg mt3">
+  <p class="h3 mt4 mb2 center uppercase">Latest Posts</p>
+  <div class="sm:grid2cols md:grid3cols gap">
+    {% set postslist = collections.posts | head(-3) %}
+    {% for post in postslist | reverse %}
+    {% include "_includes/post-card.njk" %}
+    {% endfor %}
+  </div>
+
+  <div class="my3 center">
+    <p class="h3">
+      <a class="noline" href="/posts/">More posts&nbsp; ⮕</a>
+    </p>
+  </div>
+</section>

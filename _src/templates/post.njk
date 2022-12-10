@@ -1,0 +1,61 @@
+---
+layout: base.njk
+---
+
+<div class="wxl mxauto sm:grid4cols gap">
+  <div class="sm:cols1-3">
+    <article id="post-content" class="my2 p1 bgwhite {% if articleClass %}{{ articleClass }}{% endif %}">
+      <header id="post-header" class="p2">
+        <div class="bb1 bgray pb1">
+          <div class="longread">
+            {% if description %}
+            <h1 class="heavy">
+              {% if draft %}
+              <strong class="inline-block pcell bgred twhite">IN DRAFT</strong><br>
+              {% endif %}
+              {{ h1Title or title }}
+            </h1>
+            <p class="h4 m0 mt2">{{ description }}</p>
+      
+            {% else %}
+            <h1 class="heavy">
+              {% if draft %}
+              <strong class="inline-block pcell bgred twhite">IN DRAFT</strong><br>
+              {% endif %}
+              {{ h1Title or title }}
+            </div>
+            {% endif %}
+          </div>
+          {% include "_includes/post-header-metas.njk" %}
+        </div>
+      </header>
+    
+      <div id="post-body" class="contentgrid mt2 mb4">
+    
+        {{ content | safe }}
+    
+      </div>
+    
+      <footer id="post-footer">
+        <p class="center">
+          In tags:
+          {% for tag in tags %}
+            {%- if tag != "posts" -%}
+            {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+            <span class="post-tag"><a class="noline h:line" href="{{ tagUrl }}">{{ tag }}</a></span>
+            {%- endif -%}
+          {% endfor %}
+          </p>
+          <p>
+            {% include "_includes/social-sharing.njk" %}
+          </p>
+      </footer>
+
+      {% include "_includes/post-prev-next.njk" %}
+    </article>        
+  </div>
+
+  {% include "_includes/post-sidebar.njk" %}
+</div>
+
+{# include "_includes/posts-recent.njk" #}

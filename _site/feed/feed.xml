@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>EBST</title>
+	<subtitle>Give your site a subitle</subtitle>
+	
+	<link href="https://yoururl.com/feed/feed.xml" rel="self"/>
+	<link href="https://yoururl.com"/>
+	<updated>2022-12-10T00:00:00Z</updated>
+	<id>https://yoururl.com/</id>
+	<author>
+		<name>Your Name</name>
+		<email>yourname@yoururl.com</email>
+	</author>
+	
+	<entry>
+		<title>Using the Front Matter CMS in Visual Studio Code</title>
+		<link href="https://yoururl.com/posts/2022/front-matter-cms/"/>
+		<published>2022-12-10T00:00:00Z</published>
+		<id>https://yoururl.com/posts/2022/front-matter-cms/</id>
+		<summary>With the Front Matter CMS plugin in VS Code, you get a CMS-like experience for content creation.</summary>
+	</entry>
+	
+	<entry>
+		<title>Social Sharing in EBST</title>
+		<link href="https://yoururl.com/posts/2022/social-sharing/"/>
+		<published>2022-12-08T00:00:00Z</published>
+		<id>https://yoururl.com/posts/2022/social-sharing/</id>
+		<summary>Simple social sharing tools included in the Eleventy Blog Starter Theme.</summary>
+	</entry>
+	
+	<entry>
+		<title>Links, Navigation, Feeds, and Pagination in Eleventy (and EBST)</title>
+		<link href="https://yoururl.com/posts/2022/linking/"/>
+		<published>2022-12-01T00:00:00Z</published>
+		<id>https://yoururl.com/posts/2022/linking/</id>
+		<summary>How internal links, navigation menus, and automatic pagination works in Eleventy and EBST.</summary>
+	</entry>
+	
+	<entry>
+		<title>How EBST Uses YAML Front Matter for Pages and Blog Posts</title>
+		<link href="https://yoururl.com/posts/2022/yaml-front-matter/"/>
+		<published>2022-11-25T00:00:00Z</published>
+		<id>https://yoururl.com/posts/2022/yaml-front-matter/</id>
+		<summary>Using YAML for setting the title, choosing the layout, adding topical tags, and controlling “widgets”.</summary>
+	</entry>
+	
+	<entry>
+		<title>Content Creation with Markdown</title>
+		<link href="https://yoururl.com/posts/2022/content-creation/"/>
+		<published>2022-10-15T00:00:00Z</published>
+		<id>https://yoururl.com/posts/2022/content-creation/</id>
+		<summary>Markdown is an easy-to-learn web text authoring language, that is converted into HTML.</summary>
+	</entry>
+	
+	<entry>
+		<title>EBST Templates and Partials Walkthrough</title>
+		<link href="https://yoururl.com/posts/2022/theme-templates/"/>
+		<published>2022-09-21T00:00:00Z</published>
+		<id>https://yoururl.com/posts/2022/theme-templates/</id>
+		<summary>How this theme uses the Nunjucks templating system.</summary>
+	</entry>
+	
+	<entry>
+		<title>About Eleventy, and Static Site Generators</title>
+		<link href="https://yoururl.com/posts/2022/about-eleventy/"/>
+		<published>2022-08-12T00:00:00Z</published>
+		<id>https://yoururl.com/posts/2022/about-eleventy/</id>
+		<summary>How Eleventy fits into the grand scheme of web things.</summary>
+	</entry>
+	
+	<entry>
+		<title>Installing EBST, Eleventy, and Other Dependencies</title>
+		<link href="https://yoururl.com/posts/2022/installation/"/>
+		<published>2022-08-03T00:00:00Z</published>
+		<id>https://yoururl.com/posts/2022/installation/</id>
+		<summary>How to install the Eleventy Blog Starter Theme and its dependencies (including Eleventy); and how to serve the static website locally on your computer.</summary>
+	</entry>
+	
+	<entry>
+		<title>Introduction to the Eleventy Blog Starter Theme (EBST)</title>
+		<link href="https://yoururl.com/posts/2022/introduction/"/>
+		<published>2022-08-01T00:00:00Z</published>
+		<id>https://yoururl.com/posts/2022/introduction/</id>
+		<summary>This theme is documented in blog posts.</summary>
+	</entry>
+</feed>

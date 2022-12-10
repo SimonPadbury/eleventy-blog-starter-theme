@@ -1,0 +1,28 @@
+{#
+Social Metas -- see for reference
+https://css-tricks.com/essential-meta-tags-social-media/
+#}
+
+{#  Essential META Tags #}
+<meta property="og:title" content="{{ h1Title or title }}">
+<meta property="og:type" content="article" />
+  {% if featuredImage %}
+  <meta property="og:image" content="{{ metadata.url + featuredImage }}">
+  {% else %}
+  <meta property="og:image" content="{{ metadata.url + '/img/featured-image.png' }}">
+  {% endif %}
+  {% if permalink %}
+  <meta property="og:url" content="{{ metadata.url + permalink }}">
+  {% else %}
+  <meta property="og:url" content="{{ metadata.url + page.filePathStem }}">
+  {% endif %}
+<meta name="twitter:card" content="summary_large_image">
+
+{#  Non-Essential, But Recommended #}
+<meta property="og:description" content="{{ description }}">
+<meta property="og:site_name" content="{{ metadata.title }}">
+<meta property="twitter:image:alt" content="{{ metadata.url + featuredImageAlt }}">
+
+{#  Non-Essential, But Required for Analytics #}
+<meta property="fb:app_id" content="{{ metadata.facebookAppId }}" />
+<meta property="twitter:site" content="{{ metadata.twitterSite }}">

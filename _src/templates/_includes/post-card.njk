@@ -1,0 +1,37 @@
+<div class="post-card b1 r3 p2 h100% flex flexcolumn bgwhite">
+  <div class="grow flex flexcolumn">
+    <p class="h3 m0 bold">
+      {% if post.data.draft %}
+      <strong class="inline-block pcell bgred twhite">IN DRAFT</strong><br>
+      {% endif %}
+      <a class="postlist-link tgray t900 h:tblack noline h:line" href="{{ post.url }}">
+        {% if post.data.h1Title %}
+          {{ post.data.h1Title }}
+        {% else %}
+          {{ post.data.title }}
+        {% endif %}
+      </a>
+    </p>
+  
+    <p class="grow mt1">
+      {% if post.data.description %}
+        {{ post.data.description }}
+      {% else %}
+        DESCRIPTION REQUIRED
+      {% endif %}
+    </p>
+  </div>
+
+  <p>
+    {{ post.date | date("d MMMM yyyy") }} • {{ post.templateContent | striptags | wordcount | readingTime }} read
+  </p>
+  <p class="m0">
+    In 
+    {% for tag in post.data.tags %}
+    {%- if collections.tagList.indexOf(tag) != -1 -%}
+    {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+    <span class="post-tag"><a class="noline h:line" href="{{ tagUrl }}">{{ tag }}</a></span>
+    {%- endif -%}
+    {% endfor %}  
+    </p>
+</div>

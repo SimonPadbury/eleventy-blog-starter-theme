@@ -1,0 +1,29 @@
+<nav id="prev-next" class="m2 bt1 bgray pt2 sm:grid2cols gap">
+
+  {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+  {%- if previousPost %}
+    <a class="prev flex flexmiddle" href="{{ previousPost.url }}">
+      <div class="big">
+        <span class="h2 m0">❮</span>
+      </div>
+      <div class="pt1">
+        <span class="uppercase">Previous post</span><br />
+        <strong>{{ previousPost.data.h1Title or previousPost.data.title  }}</strong>
+      </div>
+    </a>
+  {% endif %}
+
+  {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
+  {%- if nextPost %}
+    <a class="next sm:col2 flex flexmiddle flexend right" href="{{ nextPost.url }}">
+      <div class="pt1">
+        <span class="uppercase">Next post</span><br />
+        <strong>{{ nextPost.data.h1Title or previousPost.data.title }}</strong>  
+      </div>
+      <div class="big">
+        <span class="h2 m0">❯</span> 
+      </div>
+    </a>
+  {% endif %}
+
+</nav>

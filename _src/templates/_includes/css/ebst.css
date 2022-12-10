@@ -1,0 +1,60 @@
+@media (max-width: 767px) {
+  #site-navigation a {
+    margin-block: var(--s2)
+  }
+}
+
+#theme-toggle {
+  background: transparent;
+}
+.theme-light #theme-toggle {
+  color: hsl(var(--hsgray), var(--l800));
+}
+
+.theme-dark #theme-toggle span::before { content: 'Light '; }
+.theme-light #theme-toggle span::before { content: 'Dark '; }
+
+body.theme-dark  {
+  background-color: black !important;
+  color: hsl(var(--hsgray), var(--l100));
+}
+.theme-dark a {
+  color: hsl(var(--hsblue), var(--l300));
+}
+.theme-dark a:hover {
+  color: hsl(var(--hsblue), var(--l400));
+}
+.theme-dark code, .theme-dark pre code {
+  color: white;
+  background-color: hsl(var(--hsblue), var(--l600));
+}
+.theme-dark #site-header {
+  background-color: hsl(var(--hsgray), var(--l900));
+}
+.theme-dark #featured-posts {
+  border-color: hsl(var(--hsgray), var(--l700));
+  background-color: hsl(var(--hsgray), var(--l900));
+}
+.theme-dark #post-content, .theme-dark #page-content, .theme-dark .post-card {
+  background-color: hsl(var(--hsgray), var(--l900));
+}
+.theme-dark .post-card {
+  border-color: hsl(var(--hsgray), var(--l500));
+}
+.theme-dark .h2 a, .theme-dark .h3 a {
+  color: hsl(var(--hsgray), var(--l100));
+}
+.theme-dark .h2 a:hover, .theme-dark .h3 a:hover {
+  color: hsl(var(--hsgray), var(--l200));
+}
+.theme-dark .message-info {
+  border-color: hsl(var(--hsblue), var(--l400));
+  background-color: black;
+}
+
+.contentgrid pre {
+  grid-column: 3 / span 3;
+}
+.post-tag:not(:last-of-type)::after {
+  content: ","
+}

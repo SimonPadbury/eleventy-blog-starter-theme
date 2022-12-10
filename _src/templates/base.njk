@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>{{ title + ' · ' if title }}{{ metadata.title }}</title>
+
+    <meta name="description" content="{{ description or metadata.description }}">
+
+    {% include "_includes/social-metas.njk" %}
+
+    <link rel="icon" href="/favicon.ico" sizes="any"><!-- 32×32 -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='50' width='50'%3E%3Ccircle cx='25' cy='25' r='24' stroke='black' stroke-width='2' fill='orange'%3E%3C/circle%3E%3C/svg%3E" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180×180 -->
+    <link rel="manifest" href="/manifest.webmanifest">
+
+    <link rel="stylesheet" href="/css/baselayer.css{{ '?v=' + metadata.version }}">
+    {# <link rel="stylesheet" href="/css/ebst.css{{ '?v=' + metadata.version }}"> #}
+
+    {% if canonical %}
+    <link rel="canonical" href="{{ metadata.url + page.filePathStem }}" />
+    {% elseif permalink %}
+    <link rel="canonical" href="{{ metadata.url +  permalink }}" />
+    {% endif %}
+
+    <link rel="alternate" href="{{ metadata.feed.path }}" type="application/atom+xml" title="{{ metadata.title }}">
+    <link rel="alternate" href="{{ metadata.jsonfeed.path }}" type="application/json" title="{{ metadata.title }}">
+
+    <style>
+{% include "_includes/css/ebst.css" %}
+    </style>
+
+    {#<script defer src="/js/scripts.js{{ '?v=' + metadata.version }}"></script>#}
+
+    <script>
+{% include "_includes/js/switcher.js" %}
+    </script>
+  </head>
+
+  <body class="h100vh flex flexcolumn {% if bodyClass %}{{ bodyClass }}{% endif %}">
+
+    <!-- Current page: {{ page.url }} -->
+
+    <a id="skip-link" href="#main-content" tabindex="1" class="inlineblock m1 visuallyhidden">Skip to main content</a>
+
+    {% include "_includes/site-header.njk" %}
+
+    <main id="main-content" class="grow {% if mainContentClass %}{{ mainContentClass }}{% endif %}">
+      {{ content | safe }}
+    </main>
+
+    {% include "_includes/site-footer.njk" %}
+
+  </body>
+</html>

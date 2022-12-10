@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://yoururl.com/posts/archive/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/about/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/contact/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/posts/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/Eleventy/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/Markdown/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/YAML/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/Front%20Matter/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/VSCode/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/Installation/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/Styles%20and%20Scripts/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/Metadata/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/Links/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/Social%20media/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/Nunjucks/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/featuredPosts/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/sidebarMenu/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/posts/2022/introduction/</loc>
+    <lastmod>2022-08-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/posts/2022/installation/</loc>
+    <lastmod>2022-08-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/posts/2022/about-eleventy/</loc>
+    <lastmod>2022-08-12</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/posts/2022/theme-templates/</loc>
+    <lastmod>2022-09-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/posts/2022/content-creation/</loc>
+    <lastmod>2022-10-15</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/posts/2022/yaml-front-matter/</loc>
+    <lastmod>2022-11-25</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/posts/2022/linking/</loc>
+    <lastmod>2022-12-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/posts/2022/social-sharing/</loc>
+    <lastmod>2022-12-08</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/posts/2022/front-matter-cms/</loc>
+    <lastmod>2022-12-10</lastmod>
+  </url>
+</urlset>

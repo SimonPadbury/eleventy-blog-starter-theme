@@ -1,0 +1,41 @@
+---
+layout: page.njk
+title: Archive
+description: "Listing of all blog posts."
+permalink: /posts/archive/
+---
+
+{#
+  Long list of all posts, segmented into yearly lists
+#}
+
+{% for post in collections.posts | reverse %}
+  {% set currentYear = post | year %}
+  {% set previousYear = collections.posts | getPreviousCollectionItem(post) | year %}
+  {% if loop.first %}
+  <h2>{{ currentYear }}</h2>
+  <div class="mt2">
+  {% endif %}
+    <div class="flex-space-md py2">
+      <p class="h3 m0 heavy">
+        <a class="tray t800 h:tblack noline h:line" href="{{ post.url }}">{{ post.data.h1Title }}</a>
+      </p>
+      <p class="mt1">
+        <span class="my2">{{ post.date | date("d MMMM yyyy") }}</span>
+        • in
+        {% for tag in post.data.tags %}
+          {%- if collections.tagList.indexOf(tag) != -1 -%}
+          {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+          <span class="post-tag"><a href="{{ tagUrl }}">{{ tag }}</a></span>
+          {%- endif -%}
+        {% endfor %}
+      </p>
+    </div>
+  {% if loop.last %}
+  </div>
+  {% elif currentYear != previousYear %}
+  <h2 class="mt-3">{{ previousYear }}</h2>
+  <div class="b-top">
+  {% endif %}
+{% endfor %}
+</div>
