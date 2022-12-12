@@ -37,6 +37,16 @@
   </url>
   
   <url>
+    <loc>https://yoururl.com/tags/Styles%20and%20Scripts/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/Metadata/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yoururl.com/tags/Front%20Matter/</loc>
     <lastmod>2022-05-13</lastmod>
   </url>
@@ -57,12 +67,7 @@
   </url>
   
   <url>
-    <loc>https://yoururl.com/tags/Styles%20and%20Scripts/</loc>
-    <lastmod>2022-05-13</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yoururl.com/tags/Metadata/</loc>
+    <loc>https://yoururl.com/tags/Installation/</loc>
     <lastmod>2022-05-13</lastmod>
   </url>
   
@@ -72,17 +77,12 @@
   </url>
   
   <url>
-    <loc>https://yoururl.com/tags/Nunjucks/</loc>
-    <lastmod>2022-05-13</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yoururl.com/tags/Installation/</loc>
-    <lastmod>2022-05-13</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yoururl.com/tags/Social%20media/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/Nunjucks/</loc>
     <lastmod>2022-05-13</lastmod>
   </url>
   
