@@ -37,16 +37,6 @@
   </url>
   
   <url>
-    <loc>https://yoururl.com/tags/Markdown/</loc>
-    <lastmod>2022-05-13</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yoururl.com/tags/YAML/</loc>
-    <lastmod>2022-05-13</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yoururl.com/tags/Front%20Matter/</loc>
     <lastmod>2022-05-13</lastmod>
   </url>
@@ -57,7 +47,12 @@
   </url>
   
   <url>
-    <loc>https://yoururl.com/tags/Installation/</loc>
+    <loc>https://yoururl.com/tags/Markdown/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/YAML/</loc>
     <lastmod>2022-05-13</lastmod>
   </url>
   
@@ -77,12 +72,17 @@
   </url>
   
   <url>
-    <loc>https://yoururl.com/tags/Social%20media/</loc>
+    <loc>https://yoururl.com/tags/Nunjucks/</loc>
     <lastmod>2022-05-13</lastmod>
   </url>
   
   <url>
-    <loc>https://yoururl.com/tags/Nunjucks/</loc>
+    <loc>https://yoururl.com/tags/Installation/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yoururl.com/tags/Social%20media/</loc>
     <lastmod>2022-05-13</lastmod>
   </url>
   
