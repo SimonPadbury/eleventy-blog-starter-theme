@@ -47,8 +47,23 @@
 
     <style>
 @media (max-width: 767px) {
-  #site-navigation a {
-    margin-block: var(--s2)
+  #site-navigation-menu a {
+    display: block;
+    margin-block: var(--s3)
+  }
+}
+.js #site-navigation-menu {
+  overflow-y: hidden;
+  max-height: 0;
+  transition: max-height .6s cubic-bezier(0, 1, 0, 1);
+}
+#site-navigation-menu.is-active {
+  max-height: 500px;
+  transition-timing-function: ease-in;
+}
+@media (min-width: 768px) {
+  .js #site-navigation-menu {
+    max-height: unset;
   }
 }
 
@@ -117,7 +132,37 @@ body.theme-dark  {
     <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  const themeToggle = document.querySelectorAll("#theme-toggle");
+  /**
+   * Site Navigation Toggle (Phones)
+   */
+
+  let toggle = document.querySelector('#site-navigation-toggle');
+  let menu = document.querySelector('#site-navigation-menu');
+
+  document.body.classList.add('js');
+
+  toggle.addEventListener('click', function() {
+    if (menu.classList.contains('is-active')) {
+      this.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-active');
+    } else {
+      menu.classList.add('is-active'); 
+      this.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.matchMedia('(min-width: 720px)').matches) {
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-active');
+    }
+  });
+
+  /**
+   * Theme Switcher
+   */
+
+  let themeToggle = document.querySelectorAll("#theme-toggle");
 
   themeToggle.forEach(element => {
     element.addEventListener("click", function() {
@@ -231,51 +276,6 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </header>
 
-<style>
-  @media (max-width: 719px) {
-    #site-navigation-menu a {
-      display: block;
-    }
-  }
-  .js #site-navigation-menu {
-    overflow-y: hidden;
-    max-height: 0;
-    transition: max-height .6s cubic-bezier(0, 1, 0, 1);
-  }
-  #site-navigation-menu.is-active {
-    max-height: 500px;
-    transition-timing-function: ease-in;
-  }
-  @media (min-width: 720px) {
-    .js #site-navigation-menu {
-      max-height: unset;
-    }
-  }
-</style>
-
-<script type="text/javascript">
-  let toggle = document.querySelector('#site-navigation-toggle');
-  let menu = document.querySelector('#site-navigation-menu');
-
-  document.body.classList.add('js');
-
-  toggle.addEventListener('click', function() {
-    if (menu.classList.contains('is-active')) {
-      this.setAttribute('aria-expanded', 'false');
-      menu.classList.remove('is-active');
-    } else {
-      menu.classList.add('is-active'); 
-      this.setAttribute('aria-expanded', 'true');
-    }
-  });
-
-  window.addEventListener('resize', function () {
-    if (window.matchMedia('(min-width: 720px)').matches) {
-      toggle.setAttribute('aria-expanded', 'false');
-      menu.classList.remove('is-active');
-    }
-  });
-</script>
 
     <main id="main-content" class="grow ">
       
@@ -315,7 +315,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div id="post-body" class="contentgrid mt2 mb4">
     
         <p>Through a series of blog posts, I will introduce several of the salient features of the Eleventy Blog Starter Theme (EBST). Consider these posts as both documentation and an example.</p>
-<p>This project aims to provide a good place to start an Eleventy (often shortened to 11ty) static website/blog.</p>
+<p>This project aims to provide a good place to start an Eleventy (often shortened to <em>11ty</em>) static website/blog.</p>
 <p>Only some basic informaton will be provided in these docs about <a href="https://www.11ty.dev">Eleventy</a>, the <a href="https://mozilla.github.io/nunjucks/">nunjucks</a> templating system, and <a href="https://www.markdownguide.org">Markdown</a>. If you want more on these, you can click those links.</p>
 <h2 id="the-stylesheet" tabindex="-1">The Stylesheet</h2>
 <p>A stylesheet is included — my own <a href="https://github.com/SimonPadbury/baselayer">Baselayer CSS</a>, but that is <a href="https://simonpadbury.github.io/baselayer/">documented elsewhere</a>.</p>
@@ -328,7 +328,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <p>Baselayer CSS has no accompanying or required JavaScript. So, you can use it with a JS framework of your choice (or create your own). But this Eleventy starter theme has a couple of “vanilla” JS scripts:</p>
 <ol>
 <li>A nav menu slide-reveal for small viewports (phones)</li>
-<li>A year-getter, for the site footer © Copyright line.</li>
+<li>A year-getter, for the site footer © Copyright line</li>
+<li>A theme toggler, for dark/light mode</li>
 </ol>
 <h2 id="the-metadata" tabindex="-1">The Metadata</h2>
 <p>EBST pulls your basic website data from a <code>_src/data/metadata.json</code>. This is where you store information about your website title and subtitle, your website’s root URL, your name as owner/author, and so on. This information is inserted (i.e. these variables are interpolated) into various places in the EBST theme, such as in the top bar and in URLs for the social sharing links and the RSS feed.</p>

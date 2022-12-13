@@ -18,7 +18,7 @@ menuOrder: 1
 
 Through a series of blog posts, I will introduce several of the salient features of the Eleventy Blog Starter Theme (EBST). Consider these posts as both documentation and an example.
 
-This project aims to provide a good place to start an Eleventy (often shortened to 11ty) static website/blog.
+This project aims to provide a good place to start an Eleventy (often shortened to _11ty_) static website/blog.
 
 Only some basic informaton will be provided in these docs about [Eleventy](https://www.11ty.dev), the [nunjucks](https://mozilla.github.io/nunjucks/) templating system, and [Markdown](https://www.markdownguide.org). If you want more on these, you can click those links.
 
@@ -38,7 +38,8 @@ _Baselayer is not essential to this theme._ Feel free to swap out Baselayer and 
 Baselayer CSS has no accompanying or required JavaScript. So, you can use it with a JS framework of your choice (or create your own). But this Eleventy starter theme has a couple of “vanilla” JS scripts:
 
 1. A nav menu slide-reveal for small viewports (phones)
-2. A year-getter, for the site footer © Copyright line.
+2. A year-getter, for the site footer © Copyright line
+3. A theme toggler, for dark/light mode
 
 ## The Metadata
 

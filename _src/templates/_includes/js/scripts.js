@@ -1,6 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const themeToggle = document.querySelectorAll("#theme-toggle");
+  /**
+   * Site Navigation Toggle (Phones)
+   */
+
+  let toggle = document.querySelector('#site-navigation-toggle');
+  let menu = document.querySelector('#site-navigation-menu');
+
+  document.body.classList.add('js');
+
+  toggle.addEventListener('click', function() {
+    if (menu.classList.contains('is-active')) {
+      this.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-active');
+    } else {
+      menu.classList.add('is-active'); 
+      this.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.matchMedia('(min-width: 720px)').matches) {
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-active');
+    }
+  });
+
+  /**
+   * Theme Switcher
+   */
+
+  let themeToggle = document.querySelectorAll("#theme-toggle");
 
   themeToggle.forEach(element => {
     element.addEventListener("click", function() {

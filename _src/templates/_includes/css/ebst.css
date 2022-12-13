@@ -1,6 +1,21 @@
 @media (max-width: 767px) {
-  #site-navigation a {
-    margin-block: var(--s2)
+  #site-navigation-menu a {
+    display: block;
+    margin-block: var(--s3)
+  }
+}
+.js #site-navigation-menu {
+  overflow-y: hidden;
+  max-height: 0;
+  transition: max-height .6s cubic-bezier(0, 1, 0, 1);
+}
+#site-navigation-menu.is-active {
+  max-height: 500px;
+  transition-timing-function: ease-in;
+}
+@media (min-width: 768px) {
+  .js #site-navigation-menu {
+    max-height: unset;
   }
 }
 
