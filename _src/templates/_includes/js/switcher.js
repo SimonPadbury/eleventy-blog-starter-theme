@@ -26,24 +26,25 @@ document.addEventListener("DOMContentLoaded", () => {
   
   function themePref() {
     if ( window.matchMedia('(prefers-color-scheme: dark)').matches ) {
-        themeDark();
+      themeDark();
     } else
     if ( window.matchMedia('(prefers-color-scheme: light)').matches ) {
-        themeLight();
+      themeLight();
     } else {
-        // Default is light
-        themeLight();
+      // Default is light
+      themeLight();
     }
   }
 
   function themeInit() {
     if ( sessionStorage.getItem("ebstTheme") === "dark" ) {
       themeDark();
-    } else {
+    } else if ( sessionStorage.getItem("ebstTheme") === "light" ) {
       themeLight();
+    } else {
+      themePref();
     }
   }
-
   themeInit();
 
 });

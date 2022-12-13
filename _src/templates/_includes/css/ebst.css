@@ -5,10 +5,13 @@
 }
 
 #theme-toggle {
-  background: transparent;
-}
-.theme-light #theme-toggle {
+  border: var(--b1);
   color: hsl(var(--hsgray), var(--l800));
+  background-color: white;
+}
+.theme-dark #theme-toggle {
+  color: hsl(var(--hsgray), var(--l200));
+  background-color: black;
 }
 
 .theme-dark #theme-toggle span::before { content: 'Light '; }

@@ -51,10 +51,13 @@
 }
 
 #theme-toggle {
-  background: transparent;
-}
-.theme-light #theme-toggle {
+  border: var(--b1);
   color: hsl(var(--hsgray), var(--l800));
+  background-color: white;
+}
+.theme-dark #theme-toggle {
+  color: hsl(var(--hsgray), var(--l200));
+  background-color: black;
 }
 
 .theme-dark #theme-toggle span::before { content: 'Light '; }
@@ -138,24 +141,25 @@ document.addEventListener("DOMContentLoaded", () => {
   
   function themePref() {
     if ( window.matchMedia('(prefers-color-scheme: dark)').matches ) {
-        themeDark();
+      themeDark();
     } else
     if ( window.matchMedia('(prefers-color-scheme: light)').matches ) {
-        themeLight();
+      themeLight();
     } else {
-        // Default is light
-        themeLight();
+      // Default is light
+      themeLight();
     }
   }
 
   function themeInit() {
     if ( sessionStorage.getItem("ebstTheme") === "dark" ) {
       themeDark();
-    } else {
+    } else if ( sessionStorage.getItem("ebstTheme") === "light" ) {
       themeLight();
+    } else {
+      themePref();
     }
   }
-
   themeInit();
 
 });
@@ -216,9 +220,9 @@ document.addEventListener("DOMContentLoaded", () => {
           href="https://github.com/SimonPadbury/eleventy-blog-starter-theme">GitHub</a>
 
         <button id="theme-toggle" class="nowrap uppercase">
-          <svg height="20" width="20">
-            <circle cx="10" cy="10" r="10" fill="currentColor" />
-          </svg>&nbsp;
+          <svg class="mr1" height="16" width="16">
+            <circle cx="8" cy="8" r="8" fill="currentColor" />
+          </svg>
           <span>theme</span></button>
       </div>
     </nav>
