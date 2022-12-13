@@ -18,6 +18,11 @@ menuOrder: 1
 
 Through a series of blog posts, I will introduce several of the salient features of the Eleventy Blog Starter Theme (EBST). Consider these posts as both documentation and an example.
 
+<div class="popout message-info mt2 bt3 r3 bblue b400 p2 flex bggray bg100">
+<span class="h1 m0 pr1">&star;</span>
+<span>These docs are also available in the EBST <a href="https://github.com/SimonPadbury/eleventy-blog-starter-theme/wiki">Wiki</a> — so you can go ahead and delete the demo posts in your project.</span>
+</div>
+
 This project aims to provide a good place to start an Eleventy (often shortened to _11ty_) static website/blog.
 
 Only some basic informaton will be provided in these docs about [Eleventy](https://www.11ty.dev), the [nunjucks](https://mozilla.github.io/nunjucks/) templating system, and [Markdown](https://www.markdownguide.org). If you want more on these, you can click those links.

@@ -22,28 +22,28 @@ You can install Eleventy before EBST. But it is simpler to do it the other way r
 
 Dependencies required by EBST, that it will automatically co-install:
 
-* Eleventy core and official dependencies:
+**Eleventy core and official dependencies:**
 
-  ```json
-  @11ty/eleventy
-  @11ty/eleventy-navigation
-  @11ty/eleventy-plugin-rss
-  ```
+```json
+@11ty/eleventy
+@11ty/eleventy-navigation
+@11ty/eleventy-plugin-rss
+```
 
-* Plugins:
+**Plugins:**
   
-  ```json
-  date-fns
-  eleventy-plugin-toc
-  markdown-it-anchor
-  markdown-it-footnote
-  ```
+```json
+date-fns
+eleventy-plugin-toc
+markdown-it-anchor
+markdown-it-footnote
+```
 
 ## How to install EBST
 
 There are two ways to start with EBST, but they converge later in the installation process.
 
-### Cloning EBST Using Git
+### EITHER: Clone EBST Using Git
 
 If you have [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed on your computer, then you can do this:
 
@@ -56,9 +56,9 @@ git clone ........ myNewProject
 
 That will clone the GitHub repository of this eleventy starter theme into a newly created folder named `myNewProject` — you can choose a better name than this.
 
-### Downloading EBST Manually
+### OR: Download EBST Manually
 
-* **Or:** download this stater theme into it (uncompress/unzip it)
+Download this stater theme into it (uncompress/unzip it)
 
 1. Rename the uncompressed project with a project name of your choice
 2. In your terminal `cd` into that new prodect folder
