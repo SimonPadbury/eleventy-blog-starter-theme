@@ -305,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
       1 August 2022
     </span>
     • <span class="time-to-read nowrap">
-      3 minutes read
+      2 minutes read
     </span>
   </p>
 </div>
@@ -328,26 +328,13 @@ document.addEventListener("DOMContentLoaded", () => {
 <p>Baselayer CSS has no accompanying or required JavaScript. So, you can use it with a JS framework of your choice (or create your own). But this Eleventy starter theme has a couple of “vanilla” JS scripts:</p>
 <ol>
 <li>A nav menu slide-reveal for small viewports (phones)</li>
-<li>A year-getter, for the site footer © Copyright line</li>
 <li>A theme toggler, for dark/light mode</li>
+<li>A year-getter, for the site footer © Copyright line</li>
 </ol>
 <h2 id="the-metadata" tabindex="-1">The Metadata</h2>
 <p>EBST pulls your basic website data from a <code>_src/data/metadata.json</code>. This is where you store information about your website title and subtitle, your website’s root URL, your name as owner/author, and so on. This information is inserted (i.e. these variables are interpolated) into various places in the EBST theme, such as in the top bar and in URLs for the social sharing links and the RSS feed.</p>
 <p>In the metadata you will see an entry for <code>&quot;version&quot;</code> – this is used as a suffix on your stylesheet(s) and JavaScript(s), to ensure that your site visitors obtain the latest version of these files instead of older ones in their browser casche (if they have previously visited your site). You can simply increment a version number, or you can put a version of the date (without spaces) that you last modified these file(s) in the <code>&quot;version&quot;</code>, as I have done in my example.</p>
 <p>You should begin putting your site information in the metadata file soon after you have installed Eleventy/EBST. Be sure to review your metadata before you deploy your website on a real webserver, and at every deployment thereafter.</p>
-<h2 id="this-documentation" tabindex="-1">This Documentation</h2>
-<p>The EBST docs are written as a series of blog posts. For purposes of demonstration on GitHub, EBST has been configured to use an output folder named <code>docs/</code> so that GitHub will use it as a documentation site.</p>
-<p>When you use EBST, you will want to change the output folder name to something more suitable, such as <code>_site</code>. You can do that in the <code>.eleventy.js</code> file.</p>
-<pre><code class="language-js">dir: {
-  input: &quot;_src&quot;,
-  includes: &quot;templates&quot;,
-  data: &quot;data&quot;,
-  output: &quot;docs&quot; // output: &quot;_site&quot;
-}
-</code></pre>
-<p>Also in the <code>.eleventy.js</code> file, you will want to change the output location of the <code>404.html</code> page.</p>
-<pre><code class="language-js">const content_404 = fs.readFileSync('docs/404.html'); // _site/404/html
-</code></pre>
 
     
       </div>
@@ -419,7 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="mb3 sm:hiddenbelow">
         <p class="h4 m0 bold">On this page</p>
         <nav class="toc" >
-        <ul><li><a href="#the-stylesheet">The Stylesheet</a></li><li><a href="#the-frontend-javascripts">The Frontend JavaScripts</a></li><li><a href="#the-metadata">The Metadata</a></li><li><a href="#this-documentation">This Documentation</a></li></ul>
+        <ul><li><a href="#the-stylesheet">The Stylesheet</a></li><li><a href="#the-frontend-javascripts">The Frontend JavaScripts</a></li><li><a href="#the-metadata">The Metadata</a></li></ul>
       </nav>
       </div>
       

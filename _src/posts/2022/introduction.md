@@ -38,8 +38,8 @@ _Baselayer is not essential to this theme._ Feel free to swap out Baselayer and 
 Baselayer CSS has no accompanying or required JavaScript. So, you can use it with a JS framework of your choice (or create your own). But this Eleventy starter theme has a couple of “vanilla” JS scripts:
 
 1. A nav menu slide-reveal for small viewports (phones)
-2. A year-getter, for the site footer © Copyright line
-3. A theme toggler, for dark/light mode
+2. A theme toggler, for dark/light mode
+3. A year-getter, for the site footer © Copyright line
 
 ## The Metadata
 
@@ -48,24 +48,3 @@ EBST pulls your basic website data from a `_src/data/metadata.json`. This is whe
 In the metadata you will see an entry for `"version"` – this is used as a suffix on your stylesheet(s) and JavaScript(s), to ensure that your site visitors obtain the latest version of these files instead of older ones in their browser casche (if they have previously visited your site). You can simply increment a version number, or you can put a version of the date (without spaces) that you last modified these file(s) in the `"version"`, as I have done in my example.
 
 You should begin putting your site information in the metadata file soon after you have installed Eleventy/EBST. Be sure to review your metadata before you deploy your website on a real webserver, and at every deployment thereafter.
-
-## This Documentation
-
-The EBST docs are written as a series of blog posts. For purposes of demonstration on GitHub, EBST has been configured to use an output folder named `docs/` so that GitHub will use it as a documentation site.
-
-When you use EBST, you will want to change the output folder name to something more suitable, such as `_site`. You can do that in the `.eleventy.js` file.
-
-```js
-dir: {
-  input: "_src",
-  includes: "templates",
-  data: "data",
-  output: "docs" // output: "_site"
-}
-```
-
-Also in the `.eleventy.js` file, you will want to change the output location of the `404.html` page.
-
-```js
-const content_404 = fs.readFileSync('docs/404.html'); // _site/404/html
-```
