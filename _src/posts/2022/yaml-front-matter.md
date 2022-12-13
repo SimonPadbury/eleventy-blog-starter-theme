@@ -22,7 +22,7 @@ From the [YAML](https://yaml.com) website:
 
 In common with all Eleventy themes, and with themes in many other static website generators, EBST uses YAML in the _front matter_ of blog webpages and blog posts. This is where you, the content creator, get to specify the _metadata_ (such as the post author and its publication date), and various _settings_ that you wish to associate with your post or page.
 
-YAML is basically a set of _key: variable_ pairs. The part before the colon `:`, the key, is a placeholder instruction. The _variable_ is your choice of metadata or setting. This front matter is understood and implemented by Eleventy. (Some of the front matter YAML codes are generic to Eleventy and others are specific to EBST.
+YAML is basically a set of _key: variable_ pairs. The part before the colon `:`, the _key_, is a placeholder instruction. The _variable_ is your choice of metadata or setting. This front matter is understood and implemented by Eleventy. (Some of the front matter YAML codes are generic to Eleventy and others are specific to EBST.
 
 ## YAML keys used in posts and pages
 
