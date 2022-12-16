@@ -11,7 +11,7 @@
 
     <nav class="wsm mxauto my2 center">
       {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-      <ul class="unlist p0 flex flexcenter uppercase">
+      <ul class="unlist p0 flex flexcenter flexwrap uppercase">
         {%- for entry in collections.all | eleventyNavigation %}
         <li class="m0 p1">
           <a class=" tblue t300 h:t400" href="{{ entry.url }}">{{ entry.title }}</a>
